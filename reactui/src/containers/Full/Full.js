@@ -1,0 +1,31 @@
+import React, {Component} from 'react';
+import {Switch, Route, Redirect} from 'react-router-dom';
+import {Container} from 'reactstrap';
+import Header from '../../components/Header/';
+import Sidebar from '../../components/Sidebar/';
+import Dashboard from '../../views/Dashboard/';
+import Register from '../../views/Pages/Register/';
+
+class Full extends Component {
+  render() {
+    return (
+      <div className="app">
+        <Header />
+        <div className="app-body">
+          <Sidebar {...this.props}/>
+          <main className="main">
+            <Container fluid>
+              <Switch>
+                <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
+                <Route exact path="/register" name="Register Page" component={Register}/>
+                <Redirect from="/" to="/dashboard"/>
+              </Switch>
+            </Container>
+          </main>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Full;
