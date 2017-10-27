@@ -15,6 +15,7 @@ const supplyContract = web3
 
 // get what we need, and then export it as a variable
 // TODO: probably best to load this into index.js and then add to global application state through redux
+// Easy fix: write data directly to data.json folder in src/components/Application/data.json
 var disp = {
     
 }

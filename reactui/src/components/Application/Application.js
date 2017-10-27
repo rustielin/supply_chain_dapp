@@ -18,10 +18,13 @@ import data from './data.json'
 
 import Entry from '../Entry/Entry'
 
+// import entries from ../../EthereumSetup.js
+
 class Application extends Component {
 
     constructor(props) {
         super(props);
+
     }
 
     createEntry(entry) {
@@ -30,7 +33,11 @@ class Application extends Component {
 
     // calls createEntry as many times as it needs
     createEntries(entries) {
-        return entries.map(this.createEntry);
+        if (this.props.you) {
+            return (entries.map(this.createEntry)).filter(entry => entry.seller == this.props.address);
+        } else {
+            return entries.map(this.createEntry);
+        }
     };
 
 

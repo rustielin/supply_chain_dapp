@@ -50,7 +50,22 @@ class Dashboard extends Component {
                     <Col>
                         <Card>
                             <CardHeader>
-                                Group Buys
+                                Your Items
+                            </CardHeader>
+                            <CardBlock>
+                            
+                                <Application you={true}/>
+                              
+                            </CardBlock>
+                            </Card>
+                        </Col>
+                </Row>
+
+                <Row>
+                    <Col>
+                        <Card>
+                            <CardHeader>
+                                Marketplace
                             </CardHeader>
                             <CardBlock>
                                 <Application/>
@@ -59,7 +74,7 @@ class Dashboard extends Component {
                             </CardBlock>
                             </Card>
                         </Col>
-                        </Row>
+                      </Row>
             </div>
     )
   }
