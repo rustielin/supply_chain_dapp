@@ -31,7 +31,7 @@ class Entry extends Component {
                     <td>
                       <div>
                       <NavLink to="/register">
-                      Enbrel
+                      {this.props.name}
                       </NavLink>
                       </div>
                       <div className="small text-muted">
