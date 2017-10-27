@@ -15,14 +15,13 @@ import '../scss/style.scss'
 import Full from './containers/Full/'
 
 
-import Register from './views/Pages/Register/'
+// import Register from './views/Pages/Register/'
 
 const history = createBrowserHistory();
 
 ReactDOM.render((
   <HashRouter history={history}>
     <Switch>
-      <Route exact path="/register" name="Register Page" component={Register}/>
       <Route path="/" name="Home" component={Full}/>
     </Switch>
   </HashRouter>
