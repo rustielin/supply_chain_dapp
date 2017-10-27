@@ -15,7 +15,6 @@ class Full extends Component {
                   <Container fluid>
                       <Switch>
                           <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
-                          <Route exact path="/register" name="Register Page" component={Register}/>
                           <Redirect from="/" to="/dashboard"/>
                       </Switch>
                   </Container>

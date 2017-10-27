@@ -38,16 +38,10 @@ class Dashboard extends Component {
     super(props);
   }
 
-  handleClick(i) {
-    alert('you bought this drug');
-  }
-
   render() {
 
     // get info here
     return (
-
-
       <div className="animated fadeIn">
           <Row>
               <Col>
