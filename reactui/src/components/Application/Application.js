@@ -1,16 +1,22 @@
 import React, {Component} from 'react';
 import {
     Badge,
-    Nav,
-    NavItem,
-    NavLink,
-    NavbarToggler,
-    NavbarBrand
+    Button,
+    Row,
+    Col,
+    Progress,
+    Card,
+    CardHeader,
+    CardBlock,
+    Form,
+    FormGroup,
+    Input,
+    Table
 } from 'reactstrap';
 
 import data from './data.json'
 
-import Entry from '../Entry/Entry.js'
+import Entry from '../Entry/Entry'
 
 class Application extends Component {
 
@@ -19,25 +25,37 @@ class Application extends Component {
     }
 
     createEntry(entry) {
-        alert("FFF")
         return <Entry name={entry} key={entry} />;
     };
 
     // calls createEntry as many times as it needs
-    createEntries(entires) {
-        alert("FUCK")
-        // entries.map(this.createEntry);
-        
+    createEntries(entries) {
+        return entries.map(this.createEntry);
     };
 
 
     render() {
         return(
-            <div>
-                poopoo
-                {JSON.stringify(data)}
-                {this.createEntries(data.entries)}
-            </div>
+
+            <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
+                                    <thead className="thead-default">
+                                        <tr>
+                                            <th className="text-center"><i className= "icon-shield"></i></th>
+                                            <th>Drug</th>
+                                            <th className="text-center">ID</th>
+                                            <th>Fulfillment Period</th>
+                                            <th className="text-center">Lowest Price</th>
+                                            <th>Buy Amount </th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                            {this.createEntries(data.entries)}
+                                    </tbody>
+            </Table>
+
+
         );
     }
 }

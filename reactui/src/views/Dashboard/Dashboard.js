@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {NavLink} from 'react-router-dom';
 import {Bar, Line} from "react-chartjs-2";
 import {
   Badge,
@@ -16,7 +15,7 @@ import {
   Table
 } from "reactstrap";
 
-import Application from "../../components/Application/Application.js"
+import Application from "../../components/Application/Application"
 
 //Random Numbers
 // function random(min, max) {
@@ -54,29 +53,14 @@ class Dashboard extends Component {
                                 Group Buys
                             </CardHeader>
                             <CardBlock>
-                                <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
-                                    <thead className="thead-default">
-                                        <tr>
-                                            <th className="text-center"><i className= "icon-shield"></i></th>
-                                            <th>Drug</th>
-                                            <th className="text-center">ID</th>
-                                            <th>Fulfillment Period</th>
-                                            <th className="text-center">Lowest Price</th>
-                                            <th>Buy Amount </th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    <Application></Application>    
-                                    
-                                    </tbody>
-                                    </Table>
-                                </CardBlock>
-                                </Card>
-                            </Col>
-                            </Row>
-                        </div>
+                                <Application/>
+                               
+                               
+                            </CardBlock>
+                            </Card>
+                        </Col>
+                        </Row>
+            </div>
     )
   }
 }

@@ -1,16 +1,23 @@
 import React, {Component} from 'react';
 import {
-    Badge,
-    Nav,
-    NavItem,
-    NavLink,
-    NavbarToggler,
-    NavbarBrand
+  Badge,
+  Button,
+  Row,
+  Col,
+  Progress,
+  Card,
+  CardHeader,
+  CardBlock,
+  Form,
+  FormGroup,
+  Input,
+  Table
 } from 'reactstrap';
 
 class Entry extends Component {
 
     constructor(props) {
+
         super(props);
 
     }
@@ -21,6 +28,7 @@ class Entry extends Component {
 
     render() {
         return (
+
                 <tr>
                     <td className="text-center">
                       <div className="avatar">
@@ -30,9 +38,7 @@ class Entry extends Component {
                     </td>
                     <td>
                       <div>
-                      <NavLink to="/register">
                       {this.props.name}
-                      </NavLink>
                       </div>
                       <div className="small text-muted">
                         <span>New</span> | Registered: Jun 7, 2017
