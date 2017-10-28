@@ -120,8 +120,36 @@ contract AmazonDapp {
     }
 
 
-    function getItemHistory(uint item_id) returns(address[]){
-        return items[item_id].history;
+    function getOwnerName(address a) returns(string) {
+        return owners[a].name;
+    }
+
+    function getOwnerBalance(address a) returns(uint) {
+        return owners[a].balance;
+    }
+
+    function getOwnerItems(address a) returns(uint[]) {
+        return owners[a].ownedItems;
+    }
+
+    function getItemPrice(uint id) returns(uint) {
+        return items[id].price;
+    }
+
+    function getItemName(uint id) returns(string) {
+        return items[id].name;
+    }
+
+    function getItemHistory(uint id) returns(address[]) {
+        return items[id].history;
+    }
+
+    function getItemForSale(uint id) returns(bool) {
+        return items[id].forSale;
+    }
+
+    function getItemOwner(uint id) returns(address) {
+        return items[id].currentOwner;
     }
 
     function () payable {
