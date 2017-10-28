@@ -41,7 +41,7 @@ class Entry extends Component {
                       {this.props.name}
                       </div>
                       <div className="small text-muted">
-                        <span>New</span> | Registered: Jun 7, 2017
+                        Address: 3456ujnbgytyuoiekmnbhuasfdoiuiyu8
                       </div>
                     </td>
                     <td className="text-center">

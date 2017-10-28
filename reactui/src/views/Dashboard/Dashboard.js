@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {Bar, Line} from "react-chartjs-2";
+import {NavLink} from "react-router-dom";
 import {
   Badge,
   Button,
@@ -39,7 +40,9 @@ class Dashboard extends Component {
     super(props);
   }
 
-
+  
+  handleClick(i) {
+  }  
 
   render() {
 
@@ -66,6 +69,13 @@ class Dashboard extends Component {
                         <Card>
                             <CardHeader>
                                 Marketplace
+                                <div className="float-right">
+                                    <NavLink to="/register">
+                                      <Button color="success">
+                                        Add Item to Marketplace
+                                      </Button>
+                                    </NavLink>
+                                </div>
                             </CardHeader>
                             <CardBlock>
                                 <Application/>
