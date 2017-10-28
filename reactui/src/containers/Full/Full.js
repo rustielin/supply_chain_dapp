@@ -7,13 +7,17 @@ import Register from '../../views/Pages/Register/';
 
 class Full extends Component {
   render() {
+
     return (
+
       <div className="app">
+
           <Header />
           <div className="app-body">
               <main className="main">
                   <Container fluid>
                       <Switch>
+                          <Route path="/register" name="Register" component={Register}/>
                           <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
                           <Redirect from="/" to="/dashboard"/>
                       </Switch>
