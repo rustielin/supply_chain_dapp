@@ -49,7 +49,7 @@ contract AmazonDapp {
         }
 
         // price is the highest value, actually set the price later
-        items[serial] = Item(serial, price, n, new address[](0), true, msg.sender);
+        items[serial] = Item(serial, price, n, new address[](0), false, msg.sender);
         items[serial].history.push(msg.sender); // set first owner of item
         
         return "You have successfully added an item";
