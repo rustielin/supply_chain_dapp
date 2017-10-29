@@ -38,18 +38,13 @@ contract AmazonDapp {
         _;
     }
 
-    function addItem(uint serial, string n, uint price) public returns (string) {
+    function addItem(uint serial, string n) public returns (string) {
         if (items[serial].id == serial) {
             return "Item already exists. Try again";
         }
 
-        // isItemOwner
-        if (owners[msg.sender].addr != msg.sender) {
-            return "You are not a valid owner";
-        }
-
         // price is the highest value, actually set the price later
-        items[serial] = Item(serial, price, n, new address[](0), true, msg.sender);
+        items[serial] = Item(serial, 99, n, new address[](0), false, msg.sender);
         items[serial].history.push(msg.sender); // set first owner of item
         
         return "You have successfully added an item";
