@@ -14,6 +14,8 @@ import '../scss/style.scss'
 // Containers
 import Full from './containers/Full/'
 
+// import {supplyContract , disp} from './EthereumSetup.js'
+
 
 // import Register from './views/Pages/Register/'
 
