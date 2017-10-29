@@ -35,19 +35,49 @@ contract('AmazonDapp', function(accounts) {
       return amazon.getFunds.call();
     }).then(function(result) { 
       assert.equal(result.toNumber(), 10, "Added funds successfully");
-      amazon.addItem(1, "item1", 1);
+      amazon.addItem(1, "item1");
       return amazon.getItemName.call(1);
     }).then(function(name) {
       assert.equal(name, "item1", "Correct name");
       return amazon.getItemPrice.call(1);
     }).then(function(price) {
-      assert.equal(price.toNumber(), 1, "Correct price");
+      assert.equal(price.toNumber(), 99, "Correct price");
       return amazon.getItemOwner.call(1);
     }).then(function(owner) {
       assert.equal(owner, acc1, "Correct owner address");
       return amazon.getItemForSale.call(1);
     }).then(function(forsale) {
       assert.equal(forsale, false, "Correct owner address");
+
+    })
+  });
+
+  it("Buy an item", function() {
+    var amazon;
+    var acc1 = accounts[0];
+
+    return AmazonDapp.deployed().then(function(instance) {
+      amazon = instance;
+      amazon.join("David");
+      amazon.addFunds({from: acc1, value: 10});
+      amazon.addItem(1, "item1");
+      return amazon.getItemPrice.call(1);
+    }).then(function(result) { 
+      assert.equal(result.toNumber(), 99, "Set price correctly");
+      amazon.setItemPrice(1, 5);
+      return amazon.getItemPrice.call(1);
+      // return amazon.getItemName.call(1);
+    }).then(function(price) {
+      assert.equal(price, 5, "Changed price correctly");
+      // return amazon.getItemPrice.call(1);
+    }).then(function(price) {
+      // assert.equal(price.toNumber(), 1, "Correct price");
+      // return amazon.getItemOwner.call(1);
+    }).then(function(owner) {
+      // assert.equal(owner, acc1, "Correct owner address");
+      // return amazon.getItemForSale.call(1);
+    }).then(function(forsale) {
+      // assert.equal(forsale, false, "Correct owner address");
 
     })
   });
