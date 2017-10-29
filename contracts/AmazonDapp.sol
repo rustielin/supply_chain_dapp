@@ -10,7 +10,8 @@ contract AmazonDapp {
         uint balance;
         uint[] ownedItems; 
     }
-    
+    uint[] public ids = new uint[](0); 
+    uint numItems = 0;
     mapping(uint => Item) items;
     
     struct Item {
@@ -46,6 +47,7 @@ contract AmazonDapp {
         // price is the highest value, actually set the price later
         items[serial] = Item(serial, 99, n, new address[](0), false, msg.sender);
         items[serial].history.push(msg.sender); // set first owner of item
+        ids[numItems++] = serial;
         
         return "You have successfully added an item";
     }
@@ -68,6 +70,7 @@ contract AmazonDapp {
         owners[msg.sender].balance -= items[itemID].price;
         owners[items[itemID].currentOwner].balance += items[itemID].price;
         items[itemID].currentOwner = msg.sender;
+        items[itemID].history.push(msg.sender);
     }
     
     function join(string name) public returns (string) { 
