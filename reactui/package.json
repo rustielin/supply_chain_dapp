@@ -26,7 +26,6 @@
     "sass-loader": "^6.0.6",
     "source-list-map": "^2.0.0",
     "style-loader": "^0.18.2",
-    "uglify-js": "^3.0.27",
     "url-loader": "^0.5.9",
     "webpack": "^3.5.3",
     "webpack-dev-server": "^2.7.1"
