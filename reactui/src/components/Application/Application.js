@@ -17,14 +17,18 @@ import {
 import data from './data.json'
 
 import Entry from '../Entry/Entry'
-
-import {supplyContract, disp} from './EthereumSetup'
+ 
+import {web3, supplyContract, disp} from './EthereumSetup'
 
 
 class Application extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            contract: supplyContract,
+            disp: disp,
+        };
     }
 
     createEntry(entry) {
@@ -43,12 +47,11 @@ class Application extends Component {
 
     render() {
         return(
-
             <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
                                     <thead className="thead-default">
                                         <tr>
                                             <th className="text-center"><i className= "icon-shield"></i></th>
-                                            <th>Drug</th>
+                                            <th>Item</th>
                                             <th className="text-center">ID</th>
                                             <th>Fulfillment Period</th>
                                             <th className="text-center">Lowest Price</th>

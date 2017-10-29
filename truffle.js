@@ -4,6 +4,7 @@ var mnemonic = "summer onion delay final bitter artwork lens soon glide prevent 
 module.exports = {
   networks: {
     rinkeby: {
+      from: "0x0C10922A476917e024ba0817322C7636eD62f1D1",
       provider: new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/"),
       network_id: "4",
       gas: 4500000,
