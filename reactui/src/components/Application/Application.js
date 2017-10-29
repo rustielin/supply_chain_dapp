@@ -18,13 +18,13 @@ import data from './data.json'
 
 import Entry from '../Entry/Entry'
 
-// import entries from ../../EthereumSetup.js
+import {supplyContract, disp} from './EthereumSetup'
+
 
 class Application extends Component {
 
     constructor(props) {
         super(props);
-
     }
 
     createEntry(entry) {
