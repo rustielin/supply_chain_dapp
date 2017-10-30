@@ -21,6 +21,7 @@ import Entry from '../Entry/Entry'
 import {web3, supplyContract, disp} from './EthereumSetup'
 
 
+
 class Application extends Component {
 
     constructor(props) {
@@ -53,10 +54,9 @@ class Application extends Component {
                                             <th className="text-center"><i className= "icon-shield"></i></th>
                                             <th>Item</th>
                                             <th className="text-center">ID</th>
-                                            <th>Fulfillment Period</th>
-                                            <th className="text-center">Lowest Price</th>
-                                            <th>Buy Amount </th>
-                                            <th>Status</th>
+                                            <th className="text-center">Price</th>
+                                            <th className="text-center">Status</th>
+                                            <th className="text-center">Buy</th>
                                         </tr>
                                     </thead>
                                     <tbody>
