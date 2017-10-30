@@ -150,6 +150,14 @@ contract AmazonDapp {
         return items[id].currentOwner;
     }
 
+    function getAllId() returns(uint[]) {
+        return ids;
+    }
+
+    function getNumItems() returns(uint) {
+        return numItems;
+    }
+
     function () payable {
         revert();
     }
